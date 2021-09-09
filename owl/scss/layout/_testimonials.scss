@@ -1,0 +1,132 @@
+.testimonialsWrap{
+   background-color: $wh;
+
+   .testimonialsHeading{
+      @include H2;
+      text-align: center;
+      font-size: 1.5rem;
+
+      &::after{
+         content: "";
+         display: none;
+      }
+   }
+
+   .testimonialsQuote{
+      display: block;
+      width: 65px;
+      margin: 0 auto 50px auto;
+   }
+
+   .testimonialsTrustPilot{
+
+      .trustpilot-widget{
+         max-width: fit-content;
+         padding: 0;
+         margin: auto;
+         position: relative;
+         left: 8px;
+      }
+   }
+
+   //style the carousel
+   .owl-carousel{
+      position: relative; // relative so the arrows can be positioned relative
+   }
+
+   // style the navigation arrows 
+   .owl-nav{      
+
+      button{
+         background-color: transparent !important;  
+         padding: 0;
+         margin: 0;
+
+         span{
+            display: none;
+         }
+
+         &:hover{
+            background-color: transparent;
+         }
+      }
+
+      .owl-prev{
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         margin: auto 0;
+
+         &::after{
+            font-family: 'Material Icons';
+            font-size: 30px; 
+            content: "\e5e0";
+            color: $accent;
+         }
+      }
+
+      .owl-next{
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         right: 0;
+         margin: auto 0;
+
+         &::after{
+            font-family: 'Material Icons';
+            font-size: 30px; 
+            content: "\e5e1";
+            color: $accent;
+         }
+      }
+   }
+
+   // dots nav 
+   .owl-dots{
+      margin: 0;
+      padding: 20px 0 0 0;
+
+      .owl-dot{
+         margin: 0 10px;
+         width: fit-content !important;
+         height: fit-content !important;
+         border: 1px solid $accent;
+         border-radius: 50%;
+         padding: 2px !important;
+
+         span{
+            margin: 0 0 0 0;
+            border-radius: 50%;
+            background-color: #F4F4F4;
+         }
+      }
+
+      .active{
+
+         span{
+            background-color: $accent !important;
+         }
+      }
+   }
+
+   // testimonial styling  
+   .testimonial{
+      .quote{
+         @include F2700;
+         font-size: 1.25rem;
+         line-height: 205%;
+         color: $blk;
+         text-align: center;
+      }
+      .author{
+         margin-top: 30px;
+         margin-bottom: 0;
+         @include F2400;
+         font-size: 1.125rem;
+         line-height: 205%;
+         color: $accent;
+         text-align: center;
+      }
+   }
+}

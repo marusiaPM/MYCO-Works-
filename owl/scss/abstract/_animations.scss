@@ -1,0 +1,83 @@
+//UP AND DOWN INFINITE
+@mixin upAndDown {
+   animation: upAndDown 2s ease-in-out infinite;
+   
+   @keyframes upAndDown {
+      0% {
+         transform: translateY(0);
+      }
+      50% {
+         transform: translateY(-15px);
+      }
+      100% {
+         transform: translateY(0);
+      } 
+   }
+}
+
+// DOWN AND UP 
+@mixin downAndUp {
+   animation: downAndUp 2s ease-in-out infinite;
+   
+   @keyframes downAndUp {
+      0% {
+         transform: translateY(0);
+      }
+      50% {
+         transform: translateY(15px);
+      }
+      100% {
+         transform: translateY(0);
+      } 
+   }
+}
+
+//LEFT AND BACK INFINITE
+@mixin leftAndBack {
+   animation: an 2s ease-in-out infinite;
+   
+   @keyframes an {
+      0% {
+         transform: translateX(0);
+      }
+      50% {
+         transform: translateX(-15px);
+      }
+      100% {
+         transform: translateX(0);
+      } 
+   }
+}
+
+//LEFT AND BACK INFINITE
+@mixin rightAndBack {
+   animation: an 2s ease-in-out infinite;
+   
+   @keyframes an {
+      0% {
+         transform: translateX(0);
+      }
+      50% {
+         transform: translateX(15px);
+      }
+      100% {
+         transform: translateX(0);
+      } 
+   }
+}
+
+//SLIDE DOWN 5px
+@mixin slideD-5px {
+   animation: slideDown 0.5s;
+   
+   @keyframes slideDown {
+      0% {
+         transform: translateY(-5px);
+         opacity: 0.7;
+      }
+      100% {
+         transform: translateY(0);
+         opacity: 1;
+      }
+   }
+}

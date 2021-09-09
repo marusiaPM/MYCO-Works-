@@ -1,0 +1,192 @@
+.addressServicesWrap{
+   .addressServices{
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 91px !important;
+      grid-template-rows: max-content max-content max-content;
+      grid-column-gap: 20px;
+      align-items: center;
+
+      // heading 
+      .servicesHeading{ 
+         max-width: 100%;
+         grid-column: 1 / span 1;
+         grid-row: 1 / span 1;
+
+         @include H2;
+         margin:0 0 0 0;
+      }
+
+      //arrows
+      .servicesNav{
+         max-width: 100%;
+         grid-column: 2 / span 1;
+         grid-row: 1 / span 1;
+
+         display: flex;
+         justify-content: flex-end;
+
+         &__btn{
+            font-size: 1rem;
+            color: $primary;
+            padding: 12px 15px;
+            background-color: $wh;
+            cursor: pointer;
+            
+            &--next{
+               margin-left: 10px;
+            }
+         }
+      }
+
+      // btns 
+      .servicesBtnsWrap{
+         margin-top: 30px;
+         max-width: 100%;
+         grid-column: 1 / span 2;
+         grid-row: 2 / span 1;
+
+         margin-bottom: 50px;
+         padding: 0 30px;
+         background-color: $wh;
+         box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+         border-radius: 6px;
+
+         .slick-track { 
+            // display: flex !important;
+            // align-items: stretch !important;
+
+            .slick-slide{  
+               // align-self: stretch !important;
+               // margin: 0 0; 
+               // height: 100% !important;
+               // max-height: 100% !important;
+               // min-height: 100% !important;
+
+               outline: none
+            }
+
+            .slick-current{
+               .servicesBtns__btn{
+                  border-bottom: 2px solid $accent;
+   
+                  p{
+                     color: $accent;
+                  }
+               }
+
+            }
+         }
+         
+         .servicesBtns{
+            &__btn{ 
+               display: flex !important;
+               align-items: center !important;
+               justify-content: center !important;
+
+               min-height: 100px;
+               padding: 10px 10px;
+               border-bottom: 2px solid transparent;
+   
+               cursor: pointer;
+   
+               transition: all 0.2s ease-in-out;
+               display: flex;
+               align-items: center;
+   
+               p{
+                  text-align: center;
+                  @include F1400;
+                  font-size: 1rem;
+                  line-height: 125%;
+               }
+   
+               &:hover{
+                  p{
+                     color: $accent;
+                  }
+               }
+            }
+         }
+      }
+      
+      // services 
+      .servicesWrap{
+         max-width: 100%;
+         grid-column: 1 / span 2;
+         grid-row: 3 / span 1;
+
+         .service{
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 30px;
+            justify-items: stretch;
+            align-items: stretch;
+
+            padding: 0 10px;
+      
+            .serviceText{
+               h2{
+                  @include H2;
+                  font-size: 1.5rem;
+               }
+
+               p{
+                  @include P1;
+                  font-size: 1rem;
+                  margin-bottom: 40px
+               }
+
+               ul{
+                  @include tickList;
+                  margin-bottom: 50px;
+               }
+
+               a{
+                  @include Btn1;
+               }
+            }
+
+            .serviceImage{ 
+               img{
+                  display: block;
+                  width: 100%;
+                  max-height: 550px;
+                  object-fit: cover;
+
+                  border-radius: 4px;
+               }
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 1025px){
+   .addressServicesWrap{
+      .addressServices{
+         .servicesWrap{
+
+            .service{
+               display: block !important;
+
+               .serviceImage{
+                  display: none;
+               }
+            }
+
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 600px){
+   .addressServicesWrap{
+      .addressServices{
+         // btns 
+         .servicesBtnsWrap{
+            padding: 0 15px;
+         }
+      }
+   }
+}

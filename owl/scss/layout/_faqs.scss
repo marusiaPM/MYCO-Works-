@@ -1,0 +1,101 @@
+.FAQsWrap{
+   background-color: $wh;
+
+   .FAQs{
+      max-width: 1000px;
+      margin: auto;
+
+      &__heading{
+         @include H2;
+         font-size: 2.125rem;
+         text-align: center;
+      }
+
+      .faq{
+         padding: 20px 60px;
+         border: 1px solid $accent;
+         border-radius: 4px;
+
+         display: grid;
+         grid-template-columns: 1fr max-content;
+         grid-template-rows: max-content max-content;
+         grid-column-gap: 30px;
+         grid-row-gap: 0px;
+         align-items: center;
+
+         transition: all 0.1s ease-out;
+         cursor: pointer;
+
+         .question{
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+
+            @include F1500;
+            font-size: 1.25rem;
+            color: $accent;
+         }
+
+         .answer{  
+            grid-column: 1 / span 1;
+            grid-row: 2 / span 1;
+
+            @include F1400;
+            font-size: 1rem;
+            color: $blk;
+
+            padding: 0;
+            height: 0;
+            display: none;
+            overflow: hidden;
+            box-sizing: content-box;
+            transition: all 0.2s ease-out;
+         }
+
+         .open-close{
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 2;
+            align-self: center;
+            padding: 0 0;
+            
+            i{
+               font-size: 1.25rem;
+               color: $accent;
+               cursor: pointer;
+            }
+
+            .fa-times-circle{
+               display: none;
+            }
+         }
+
+         &:not(:last-child){
+            margin-bottom: 10px;
+         }
+
+         &--open{
+            background-color: $accent-pale;
+            border-color: transparent;
+
+            .open-close{
+               grid-column: 2 / span 1;
+               grid-row: 1 / span 2;
+               align-self: center;
+               padding: 0 0;
+               
+               i{
+                  font-size: 1.25rem;
+                  color: $accent;
+               }
+   
+               .fa-times-circle{
+                  display: block;
+               }
+
+               .fa-chevron-down{
+                  display: none;
+               }
+            }
+         }
+      }
+   }
+}

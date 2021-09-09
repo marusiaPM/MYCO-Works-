@@ -1,0 +1,562 @@
+.locationsAndMeetingRoomsWrap{
+
+   .locationsAndMeetingRooms{
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-template-rows: max-content;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+   }
+
+   .ourLocationsWrap{ 
+      display: flex;
+      flex-direction: column;
+      justify-items: space-between;
+      
+      position: relative;
+      width: 25vw;
+      max-width: 550px;
+      min-width: fit-content;
+      background: $primary;
+      padding: 60px 20px;
+
+      .ourLocations{
+         width: 180px;
+         min-height: fit-content;
+         margin: 0 auto;
+
+         &__h{
+            @include F2400;
+            color: $wh;
+            font-size: 1.5rem;
+            line-height:148%;
+            margin-bottom: 60px;
+         }
+   
+         &__selected{
+            display: none;
+         }
+   
+         &__changeSelected{
+            display: none; 
+         }
+   
+         &__locations{
+            position: relative;
+            padding: 0;
+
+            .location-radio{
+               opacity: 0;
+
+               &:checked + .loc-label {
+                  color: $accent;
+               }
+            }
+   
+            label{
+               position: relative;
+               left: -15px;
+               margin-bottom: 10px;
+               @include F2400;
+               color: $wh;
+               font-size: 1.125rem;
+               line-height: 250%;
+               transition: all 0.2s ease-in-out;
+
+               &:hover{
+                  cursor: pointer;
+                  color: $accent;
+               }
+
+            }
+
+         }
+      }
+
+   } 
+
+   .ourOffices{
+      
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+
+      display: none; // to close all
+
+       //office box
+      .office{ 
+         height: fit-content;
+         height: 100%;
+         padding: 200px 20px 20px 20px;
+
+         display: grid;
+         grid-template-columns: max-content 1fr;
+         grid-template-rows: max-content max-content;
+         align-content: end;
+         grid-row-gap: 10px;
+         grid-column-gap: 10px;
+
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center center;
+
+         &__address{
+            grid-column: 1 / span 2;
+            text-decoration: none;
+            @include F2700;
+            line-height: 105%;
+            font-size: 1.375rem;
+            color: $wh;
+
+            &:hover{
+               color: $accent;
+            }
+         }
+
+         &__postCode{
+            @include F2700;
+            font-size: 1.5rem;
+            color: $wh;
+         }
+
+         &__mapBtn{
+            height: 30px;
+            display: block;
+            margin-left: 20px;
+            cursor: pointer;
+         }
+
+         &--portland1{
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)), 
+                           url('../img/locations/portland-1.png');
+         }
+
+         &--bellY{
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)), 
+                           url('../img/locations/bell-yard-1.png');
+         }
+
+         &--portland2{
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)), 
+                           url('../img/locations/portland-new-1.png');
+         }
+
+         &--ed1{
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)), 
+                           url('../img/locations/ed-1.png');
+         }
+
+         &--ed2{
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)), 
+                           url('../img/locations/ed-2.png');
+         }
+
+         &--ipsw1{
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)), 
+                           url('../img/locations/ipsw-1.png');
+         }
+
+         &--ipsw2{
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)), 
+                           url('../img/locations/ipsw-3.png');
+         }
+      }
+
+      //meeting rooms box
+      .meetingRoom{
+         height: fit-content;
+         height: 100%;
+         padding: 200px 20px 20px 20px;
+
+         display: grid;
+         grid-template-columns: 1fr max-content max-content;
+         grid-template-rows: max-content 1fr;
+         align-content: end;    
+         align-items: center;
+         grid-row-gap: 10px;
+         grid-column-gap: 10px;
+
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center center;
+
+         &__type{
+            @include F2700;
+            line-height: 120%;
+            font-size: 1.375rem;
+            color: $wh;
+            padding: 0;
+            margin: 0;
+         }
+
+         &__price{
+            @include F2700;
+            line-height: 120%;
+            font-size: 1rem;
+            color: #FFC107;
+            padding: 0;
+            margin: 0;
+         }
+         
+         &__info{
+            width: fit-content;
+            height: fit-content;
+            padding: 0;
+            margin: 0;
+
+            img{
+               display: block;
+               width: 18px;
+            }
+         }
+
+         &__text{
+            grid-column: 1 / span 3;
+            align-self: start;
+            @include P1;
+            color: $wh;
+         }
+
+         &--portland1{
+            grid-row: 2 / span 1;
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)),
+                           url('../img/locations/mr-portland-1.png');
+         }
+
+         &--bellY{
+            grid-row: 2 / span 1;
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)),
+                           url('../img/locations/mr-bell-yard-1.png');
+         }
+
+         &--portland2{
+            grid-row: 2 / span 1;
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)),
+                           url('../img/locations/mr-portland-new-1.png');
+         }
+
+         &--ed1{
+            grid-row: 2 / span 1;
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)),
+                           url('../img/locations/ed-3.png');
+         }
+
+         &--ed2{
+            grid-row: 2 / span 1;
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)),
+                           url('../img/locations/ed-4.png');
+         }
+
+         &--ipsw1{
+            grid-row: 2 / span 1;
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)),
+                           url('../img/locations/ipsw-2.png');
+         }
+
+         &--ipsw2{
+            grid-row: 2 / span 1;
+            background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.5)),
+                           url('../img/locations/ipsw-4.png');
+         }
+      }
+
+      //text box
+      .text-box{
+         padding: 10px;
+         background-color: $primary;
+         @include Flex2;
+
+         p{
+            @include F2700;
+            font-size: 1.125rem;
+            line-height: 250%;
+            text-align: center;
+            color: $wh;
+            max-width:330px;
+         }
+      }
+
+      &--London{
+         display: grid;
+      }
+   }
+
+   .goTo{
+      display: block;
+      margin-top: auto;
+      
+      &__link{
+         @include Btn2;
+         margin: auto;
+         display: none;
+
+         &--lnd{
+            display: block;
+         }
+      }
+
+      &--2{
+         display: none;
+         .goTo__link{
+            color: $primary !important;
+            border-color: $primary !important;
+         }
+      }
+   }
+
+}
+
+@media screen and (max-width: 1400px){
+   .locationsAndMeetingRoomsWrap{
+
+      //london locations 
+      .ourOffices--London{
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+
+         //office box
+         .office{
+            grid-column: 1 / span 1;
+
+            align-content: start;
+         }
+
+         //meeting rooms box
+         .meetingRoom{
+            grid-column: 2 / span 1;
+
+            &--portland1{
+               grid-row: 1 / span 1;
+            }
+   
+            &--bellY{
+               grid-row: 2 / span 1;
+            }
+   
+            &--portland2{
+               grid-row: 3 / span 1;
+            }
+         }
+      }
+
+      //edinburgh locations 
+      .ourOffices--Edinburgh{
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr;
+
+         .text-box{
+            display: none;
+         }
+      }
+
+      //ipswuch locations 
+      .ourOffices--Ipswich{
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr;
+
+         .text-box{
+            display: none;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 1200px){
+   .locationsAndMeetingRoomsWrap{
+      
+      .locationsAndMeetingRooms{
+         display: grid;
+         grid-template-columns: 1fr;
+         grid-template-rows: max-content max-content;
+      }
+
+      .ourLocationsWrap{
+         width: 100%;
+         max-width: 100%;
+         min-width: 100%;
+         padding: 20px 20px;
+   
+         &__circles{
+            display: none;
+         }
+   
+         .ourLocations{
+            width: fit-content;
+            min-height: fit-content;
+   
+            &__h{
+               width: fit-content;
+               margin-bottom: 0px;
+            }
+      
+            &__changeSelected{
+               display: block;
+               cursor: pointer;
+               padding: 10px 0;
+
+               span{
+                  @include F2400;
+                  font-size: 1.125rem;
+                  line-height: 197%;
+                  color: $wh;
+               }
+
+               i{
+                  font-size: 1rem;
+                  color: $accent;
+                  margin-right: 10px;
+               }
+
+               &--closed{
+                  .fa-minus{
+                     display: none;
+                  }
+               }
+
+               &--open{
+                  .fa-plus{
+                     display: none;
+                  }
+               }
+            }
+      
+            &__locations{
+               list-style: none; 
+               padding: 0;
+               height: 0;
+               display: none;
+               overflow: hidden;
+               transition: height 0.2s ease-out;
+      
+               .location{
+                  @include F2400;
+                  color: $wh;
+                  font-size: 1.125rem;
+                  line-height: 250%;
+                  transition: all 0.2s ease-in-out;
+   
+                  &:hover{
+                     cursor: pointer;
+                     color: $accent;
+                  }
+   
+                  &--active{ 
+                     color: $accent; 
+                     font-weight: 700;
+                  }
+               }
+   
+            }
+         }
+      }
+
+      .goTo{ 
+         &--1{
+            display: none;
+         }
+
+         &--2{
+            display: block;
+         }
+      }
+
+   }
+}
+
+@media screen and (max-width: 700px){
+   .locationsAndMeetingRoomsWrap{
+
+      //london locations 
+      .ourOffices--London{
+         grid-template-columns: 1fr;
+         grid-template-rows: max-content max-content max-content max-content max-content max-content;
+
+         //office box
+         .office{
+            grid-column: 1 / span 1;
+         }
+
+         //meeting rooms box
+         .meetingRoom{
+            grid-column: 1 / span 1;
+
+            &--portland1{
+               grid-row: 2 / span 1;
+            }
+   
+            &--bellY{
+               grid-row: 4 / span 1;
+            }
+   
+            &--portland2{
+               grid-row: 6 / span 1;
+            }
+         }
+      }
+
+       //edinburgh locations 
+      .ourOffices--Edinburgh{
+         grid-template-columns: 1fr;
+         grid-template-rows: max-content max-content max-content max-content;
+
+         //office box
+         .office{
+            grid-column: 1 / span 1;
+
+            &--ed1{
+               grid-row: 1 / span 1;
+            }
+
+            &--ed2{
+               grid-row: 3 / span 1;
+            }
+         }
+
+         //meeting rooms box
+         .meetingRoom{
+            grid-column: 1 / span 1;
+
+            &--ed1{
+               grid-row: 2 / span 1;
+            }
+
+            &--ed2{
+               grid-row: 4 / span 1;
+            }
+         }
+      }
+
+      //ipswich locations 
+      .ourOffices--Ipswich{
+         grid-template-columns: 1fr;
+         grid-template-rows: max-content max-content max-content max-content;
+
+         //office box
+         .office{
+            grid-column: 1 / span 1;
+
+            &--ipsw1{
+               grid-row: 1 / span 1;
+            }
+
+            &--ipsw2{
+               grid-row: 3 / span 1;
+            }
+         }
+
+         //meeting rooms box
+         .meetingRoom{
+            grid-column: 1 / span 1;
+
+            &--ipsw1{
+               grid-row: 2 / span 1;
+            }
+
+            &--ipsw2{
+               grid-row: 4 / span 1;
+            }
+         }
+      }
+   }
+}

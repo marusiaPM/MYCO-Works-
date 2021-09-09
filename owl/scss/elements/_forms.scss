@@ -1,0 +1,312 @@
+// @mixin contactForm{
+//    background-color: transparent;
+
+//    display: grid;
+//    grid-template-columns: 1fr 1fr;
+//    grid-row-gap: 10px;
+//    grid-column-gap: 50px;
+
+//    input{
+//       width: 100%;
+//       padding: 0 0 10px 0;
+
+//       cursor: pointer; 
+
+//       @include P1;
+//       color: $wh;
+
+//       border: none;
+//       border-radius: 0;
+//       border-bottom: 1px solid $wh;
+//       box-shadow: none;
+//       outline: none;
+//       -moz-appearance: none;
+//       -webkit-appearance: none;
+//       appearance: none;
+
+//       background-color: transparent;
+
+
+//       &:focus {
+//          border: none;
+//          border-bottom: 1px solid $teal;
+//       }
+
+      
+//       &::placeholder { 
+//          @include P1;
+//          color: $wh;
+//          opacity: 1;
+//       }
+
+//    }
+
+//    textarea{
+//       width: 100%;
+//       height: 300px;
+
+//       box-sizing: border-box;
+
+//       padding: 20px;
+
+//       cursor: pointer;
+
+//       @include P1;
+//       color: $wh;
+
+//       border: 1px solid $wh;
+//       border-radius: 0;
+//       box-shadow: none;
+//       outline: none;
+//       -moz-appearance: none;
+//       -webkit-appearance: none;
+//       appearance: none;
+
+//       background-color: transparent;
+
+//       resize: none;
+//       overflow: auto;
+
+
+//       &:focus {
+//          border: 1px solid $teal;
+//       }
+
+//       &::placeholder { 
+//          @include P1;
+//          color: $wh;
+//          opacity: 1;
+//       }
+//    }
+
+//    &__message{
+//       grid-column: 1 / span 2;
+//    }
+
+//    &__capchaAndSubmit{
+//       grid-column: 1 / span 2;
+//       width: 100%;
+
+//       @include Flex1;
+//       justify-content: flex-end !important;
+
+//       input[type=submit]{
+//          width: fit-content !important;
+//          padding: 20px 30px;
+   
+//          background-color: transparent;
+//          @include F2400;
+//          font-size: 1rem;
+//          line-height: 100% !important;
+//          text-align: center;
+//          color: $teal;
+//          border: 2px solid $teal;
+//          transition: all 0.5s ease;
+   
+//          &:hover{
+//             background-color: $teal;
+//             color: $wh;
+//          }
+   
+//       }
+
+//    }
+
+//    // style the error messages 
+//    .errorHint {
+//       min-height: 40px;
+//       padding-top: 5px;
+//       @include P1;
+//       color: $red;
+//    }
+
+//    // class to add to invalid/ wrong input fields 
+//    .invalidFormInput{
+//       border-color: $red;
+
+//       &:focus {
+//          border-color: $red;
+//       }
+//    }
+
+//    @media screen and (max-width: 992px){
+//       .capchaAndSubmit{
+//          input[type=submit]{
+//             width: 100% !important;
+//          }
+//       }
+//    }
+
+//    @media screen and (max-width: 500px){
+//       display: grid;
+//       grid-template-columns: 1fr;
+
+//       textarea{
+//          height: 100px;
+//       }
+
+//       &__message{
+//          grid-column: 1 / span 1;
+//       }
+   
+//       &__capchaAndSubmit{
+//          grid-column: 1 / span 1;  
+//       }
+//    }
+
+// }
+
+// @mixin bookingForm{
+//    width: 100%;
+//    background-color: $lBl;
+
+//    label{
+//       @include P1;
+//    }
+
+//    input{
+//       width: 100%;
+//       box-sizing: border-box;
+//       margin: 0;
+//       padding: 10px;
+
+//       cursor: pointer;
+
+//       @include P1;
+//       text-align: center;
+
+//       border: 1px solid transparent;
+//       box-shadow: none;
+//       border-radius: 0px;
+//       outline: none;
+//       -moz-appearance: none;
+//       -webkit-appearance: none;
+//       appearance: none;
+
+//       background-color: $wh;
+
+//       &:focus {
+//          border: 1px solid $teal;
+//       }
+
+//    }
+
+//    input[type=submit]{
+//       width: fit-content !important;
+//       padding: 20px 30px;
+
+//       background-color: transparent;
+//       @include F2400;
+//       font-size: 1rem;
+//       line-height: 100% !important;
+//       text-align: center;
+//       color: $teal;
+//       border: 2px solid $teal;
+//       transition: all 0.5s ease;
+
+//       &:hover{
+//          background-color: $teal;
+//          color: $wh;
+//       }
+
+//    }
+
+//    select {
+//       display: block;
+//       width: 185px;
+//       box-sizing: border-box;
+//       padding: 10px 45px 10px 75px;
+   
+//       cursor: pointer;
+   
+//       @include P1;
+//       text-align: center;
+
+   
+//       border: 1px solid transparent;
+//       box-shadow: none;
+//       border-radius: 0px;
+//       outline: none;
+//       -moz-appearance: none;
+//       -webkit-appearance: none;
+//       appearance: none;
+   
+//       background-color: $wh;
+//       background-image: url("../img/icon/chevron-down.svg");
+//       background-repeat: no-repeat, repeat;
+//       background-position: right 20px top 50%, 0 0;
+//       background-size: 15px auto;
+   
+//       &:focus {
+//          border: 1px solid $teal;
+//       }
+   
+//       &:invalid{
+//          @include P1;
+//          text-align: center;
+//       }
+   
+//       option{
+//          @include P1;
+//          text-align: center;
+//       }
+//    }
+
+//    .pickDate{
+//       display: grid;
+//       grid-template-rows: max-content;
+//       grid-template-columns: 1fr 80px;
+
+//       label{
+//          grid-column: 2 / span 1;
+//          grid-row: 1 / span 1;
+//          align-self: stretch;
+//          padding: 0;
+//          margin: 0;
+         
+//          cursor: pointer;
+//          background-color: $wh;
+//          border-left: 1px solid #E5E5E5;
+
+//          display: grid;
+//          justify-items: center;
+//          align-items: center;
+
+//          i{
+//             font-size: 24px;
+//          }
+//       }
+
+//       input{
+//          grid-column: 1 / span 1;
+//          grid-row: 1 / span 1;
+//          align-self: stretch;
+
+//          cursor: default;
+//       }
+
+//    }
+
+//    &__submit{
+//       margin-top: 80px;
+//       display: flex;
+//       justify-content: flex-end;
+//    }
+
+//    // style the error messages 
+//    .errorHint {
+//       padding-top: 5px;
+//       @include P1;
+//       color: $red;
+//    }
+
+//    // class to add to invalid/ wrong input fields 
+//    .invalidFormInput{
+//       border-color: $red;
+
+//       &:focus {
+//          border-color: $red;
+//       }
+//    }
+// }
+
