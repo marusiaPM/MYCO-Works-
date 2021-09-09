@@ -1,0 +1,207 @@
+.footerWrap{
+   background-color: $primary;
+
+   .footerText{
+      &__text{
+         @include P1;
+         font-size: 1.125rem;
+         line-height: 190%;
+         color: $wh;
+      }
+
+      &__socials{
+
+         a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border: 1px solid $wh;
+            border-radius: 50%;
+            text-decoration: none;
+
+            i{
+               font-size: 1rem;
+               color: $wh;
+            }
+
+            &:not(:last-child){
+               margin-right: 15px;
+            }
+
+            &:hover{
+               background-color: $accent;
+               border-color: $accent;
+            }
+
+         }
+         
+      }
+
+      &__app{
+         p{
+            @include P1;
+            color: $wh;
+            margin-bottom: 20px;
+         }
+
+         a{
+            display: inline-block;
+            width: fit-content;
+            text-decoration: none;
+
+            img{
+               display: block;
+               height: 56px;
+            }
+
+            &:not(:last-child){
+               margin-right: 20px;
+            }
+         }
+      }
+   }
+
+   .footerLinks{
+      padding-top: 10px;
+      h3{
+         @include F1500;
+         font-size: 1.25rem;
+         color: $wh;
+
+         &::after{
+            content: "";
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            width: 45px;
+            border-bottom: 2px solid $accent;
+         }
+      }
+
+      a{
+         display: block;
+         max-width: fit-content;
+         text-decoration: none;
+         @include F1400;
+         font-size: 1rem;
+         line-height: 194%;
+         color: $wh;
+         margin-bottom: 10px;
+
+         &:hover{
+            color: $accent;
+         }
+      }
+   }
+
+   .footerAddress{
+      padding-top: 10px;
+
+      h3{
+         @include F1500;
+         font-size: 1.25rem;
+         color: $wh;
+
+         &::after{
+            content: "";
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            width: 45px;
+            border-bottom: 2px solid $accent;
+         }
+      }
+
+      p{
+         @include F1400;
+         font-size: 1rem;
+         line-height: 205%;
+         color: $wh;
+
+         img{
+            display: inline-block;
+            width: 23px;
+         }
+      }
+   }
+
+   .footerWorldPay{
+      width: 100% !important;
+      position: relative;
+
+      img{
+         display: block;
+         height: 90px;
+         margin-top: auto;
+      }
+   }
+}
+
+.termsWrap{
+   background-color: $primary;
+   border-top: 1px solid $gr-1;
+
+   .copy{
+      p{
+         @include P1;
+         font-size: 0.875rem;
+         color: $wh;
+      }
+   }
+
+   .terms-links{
+      a{
+         @include P1;
+         font-size: 0.875rem;
+         line-height: 0.875rem;
+         color: $wh;
+         text-decoration: none;
+
+         &:not(:last-child){
+            margin-right: 10px;
+         }
+      }
+      
+}
+   
+}
+
+@media screen and (max-width: 1200px){
+   .footerWrap{
+      .footerWorldPay{
+         img{
+            top: 0px;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 850px){
+   .footerWrap{   
+      
+      .footerLinks{
+         width: 50%;
+      }
+
+      .footerAddress{
+         width: 50%;
+      }
+      
+   }
+}
+
+@media screen and (max-width: 550px){
+   .footerWrap{   
+      
+      .footerLinks{
+         width: 100%;
+      }
+
+      .footerAddress{
+         width: 100%;
+      }
+      
+   }
+}

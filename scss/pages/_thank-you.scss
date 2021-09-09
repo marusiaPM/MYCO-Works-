@@ -1,0 +1,42 @@
+.thankYouWrap{
+   .container-fluid{
+      width: 100vw;
+      height: 100vh;
+      background-color: $blk;
+   }
+
+   .thankYou{
+      &__logo{
+         display: block;
+         margin: auto;
+         width: 90%;
+         max-width: 400px;
+      }
+
+      &__message{
+         text-align: center;
+         @include H2;
+         line-height: 190%;
+         color: $wh;
+      }
+
+      &__back{
+         width: fit-content;
+         margin: auto;
+
+         @include P1;
+         line-height: 20px !important;
+         font-size: 20px !important;
+         color: $accent;
+         text-decoration: none;
+
+         @include Flex2;
+
+         i{
+            font-size: 20px;
+            margin-right: 10px;
+            @include leftAndBack
+         }
+      }
+   }
+}

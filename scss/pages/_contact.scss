@@ -1,0 +1,396 @@
+.contactUsWrap{
+   position: relative;
+
+   .contactImage{
+      img{
+         display: block;
+         width: 100%;
+         height: 100%
+      }
+   }
+
+   .contactText{
+      &__h1{
+         @include H1;
+      }
+   
+      &__h2{
+         @include H2;
+
+         &::after{
+            content: "";
+         }
+      }
+   
+      &__p{
+         @include P1;
+         font-size: 1.125rem;
+         line-height: 200%;
+         padding-bottom: 20px !important;
+      }
+   
+      &__btn{
+         @include Btn1;
+         margin-top: 20px;
+      } 
+   }
+}
+
+.contactFormWrap{
+
+   h1{
+      @include H2;
+      font-size: 2.125rem;
+      text-align: center;
+   }
+
+   p{
+      @include P2;
+      text-align: center;
+   }
+
+   .contactForm{
+      background: $wh;
+      box-shadow: 0px 23px 26px rgba(0, 0, 0, 0.06);
+      border-radius: 6px;
+      padding: 60px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: max-content max-content max-content max-content;
+      grid-column-gap: 50px;
+      grid-row-gap: 50px;
+
+      // style the error messages 
+      .errorHint {
+         padding-top: 5px;
+         @include P1;
+         font-size: 0.875rem;
+         color: $red;
+      }
+
+      // class to add to invalid/ wrong input fields 
+      .invalidFormInput{
+         border-color: $red;
+
+         &:focus {
+            border-color: $red;
+         }
+      }
+
+      &__message{
+         grid-row: 3 / span 1;
+         grid-column: 1 / span 2;
+      }
+
+      &__capchaAndSubmit{
+         grid-row: 4 / span 1;
+         grid-column: 1 / span 2;
+
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: flex-end;
+         align-items: center;
+
+         .errorHint--capcha{
+            display: block;
+            width: 100%;
+            text-align: right !important;
+         }
+
+         .g-recaptcha{
+            margin-right: 20px;
+         }
+
+
+      }
+
+      input{
+         width: 100%;
+         padding: 0 0 50px 0;
+   
+         cursor: pointer; 
+   
+         @include P2;
+         color: $blk;
+   
+         border: none;
+         border-radius: 0;
+         border-bottom: 1px solid #C4C4C4;
+         box-shadow: none;
+         outline: none;
+         -moz-appearance: none;
+         -webkit-appearance: none;
+         appearance: none;
+   
+         background-color: transparent;
+   
+   
+         &:focus {
+            border: none;
+            border-bottom: 1px solid $accent;
+         }
+   
+         
+         &::placeholder { 
+            @include P2;
+            color: #979797;
+         }
+   
+      }
+
+      textarea{
+         width: 100%;
+         height: 90px;
+   
+         box-sizing: border-box;
+   
+         padding: 0 0 50px 0 ;
+   
+         cursor: pointer;
+   
+         @include P2;
+         color: $blk;
+         
+         border: none;
+         border-bottom: 1px solid #C4C4C4;
+         border-radius: 0;
+         box-shadow: none;
+         outline: none;
+         -moz-appearance: none;
+         -webkit-appearance: none;
+         appearance: none;
+   
+         background-color: transparent;
+   
+         resize: none;
+         overflow: auto;
+   
+   
+         &:focus {
+            border-bottom: 1px solid $accent;
+         }
+   
+         &::placeholder { 
+            @include P2;
+            color: #979797;
+         }
+      }
+
+      input[type=submit]{
+         @include Btn1;
+      }
+
+      select{
+         width: 100%;
+         box-sizing: border-box;
+         padding: 0 25px 50px 0;
+
+         cursor: pointer;
+
+         @include P2;
+         color: $blk;
+
+         border: none;
+         border-bottom: 1px solid #C4C4C4;
+         box-shadow: none;
+         border-radius: 0;
+         outline: none;
+         -moz-appearance: none;
+         -webkit-appearance: none;
+         appearance: none;
+
+         background-color: transparent;
+         background-image: url("../img/icons/chevron-down.svg"),
+                        linear-gradient(to bottom, transparent 100%, transparent 100%);
+         background-repeat: no-repeat, repeat;
+         background-position: right 0 top 5px, 0 0;
+         background-size: 20px auto, 100%;
+
+         &:focus {
+            border-bottom: 1px solid $accent;
+         }
+      
+         &:invalid{
+            @include P2;
+            color: #979797;
+         }
+
+         option{
+            @include P2;
+            color: $blk;
+         }
+
+      }
+
+   }
+}
+
+.contactDetailsWrap{ 
+
+   .contactDetailsHeading{
+      @include H2;
+      text-align: center;
+   }
+   
+   .contactDetailColWrap{
+      position: relative;
+      padding-top: 50px; 
+      height: 100%;
+
+      .detail-column{
+         background-color: $wh;
+         padding: 60px 10px 60px 10px;
+   
+         position: relative;
+
+         height: 100%;
+         display: grid;
+         grid-template-columns: 1fr;
+         grid-template-rows: 120px 1fr;
+         grid-row-gap: 5px;
+   
+         .detail-icon{
+            width: 100px;
+            height: 100px;
+            background-color: $accent;
+            border: 10px solid $wh;
+            border-radius: 50%;
+   
+            @include Flex2;
+   
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            img{
+               display: block;
+               height: 35px;
+            }
+         } 
+
+         .heading{
+            @include Flex2;
+
+            h1{
+               @include F1500;
+               font-size: 1.5rem;
+               line-height: 125%;
+               text-align: center;
+               color: $accent;
+            }
+         }
+
+         .addresses{
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 10px;
+            justify-items: stretch;
+
+            .address{
+               width: 100%;
+               padding: 0px;
+               display: block;
+
+               text-align: center;
+               @include F1500;
+               font-size: 1.25rem;
+               color: $primary;
+               line-height: 210%;
+
+               span{
+                  display: block;
+                  @include F1400;
+                  font-size: 1.75rem;
+                  line-height: 162%;
+                  color: $accent;
+                  margin-bottom: 10px;
+               } 
+
+            }
+            
+         }
+
+         .phones{
+            p{
+               @include F1400;
+               font-size: 1.5rem;
+               line-height: 162%;
+               text-align: center;
+               color: $accent;
+
+               span{
+                  display: block;
+                  @include F1500;
+                  font-size: 1.25rem;
+                  line-height: 162%;
+                  text-align: center;
+                  color: $primary;
+                  margin-top: 5px;
+               }
+
+               &:not(:last-of-type){
+                  margin-bottom: 40px;
+               }
+            }
+         }
+
+         .hours{
+            p{
+               @include F1500;
+               font-size: 1.375rem;
+               line-height: 230%;
+               text-align: center;
+               color: $primary;
+
+               span{
+                  font-size: 1.125rem;
+                  font-weight: 400;
+                  color: $blk;
+               }
+            }
+         }
+
+      }
+
+   }
+   
+}
+
+
+
+@media screen and (max-width: 700px){
+   .contactFormWrap{
+      .contactForm{
+         grid-template-columns: 1fr !important;
+         padding: 30px 20px;
+
+         &__message{
+            grid-row: 5 / span 1;
+            grid-column: 1 / span 1;
+         }
+   
+         &__capchaAndSubmit{
+            grid-row: 6 / span 1;
+            grid-column: 1 / span 1;
+         }
+      }
+   }
+
+   .contactDetailsWrap{ 
+      .contactDetailColWrap{
+         .detail-column{
+            .addresses{
+               grid-template-columns: 1fr;
+               grid-template-rows: max-content max-content max-content;
+               grid-row-gap: 10px;
+            }
+         }
+      }
+   }
+}

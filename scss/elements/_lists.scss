@@ -1,0 +1,30 @@
+@mixin tickList{
+   list-style: none;
+
+   li{
+      @include F1400;
+      font-size: 0.9375rem;
+      line-height: 162%;
+      color: $gr-2;
+      position: relative;
+      padding-left: 25px;
+
+      &:not(:last-child){
+         margin-bottom: 20px;
+      }
+
+      &::before{ 
+         content: "";
+         width: 13px;
+         height: 13px;
+         display: inline-block;
+         position: absolute;
+         top: 5px;
+         left: 0;
+         background-image: url("../img/icons/tick.svg");
+         background-position: center; 
+         background-repeat: no-repeat;
+         background-size: 100%;
+      }
+   }
+}

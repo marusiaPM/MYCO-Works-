@@ -1,0 +1,13 @@
+@mixin Flex1 {
+   display: flex !important;
+   justify-content: space-between !important;
+   align-items: center !important;
+   flex-wrap: wrap !important;
+}
+
+@mixin Flex2 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}

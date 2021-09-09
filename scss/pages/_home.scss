@@ -1,0 +1,218 @@
+.forAllNeedsWrap{
+
+   .forAllNeedsText{
+      &__h1{
+         @include H1; 
+      }
+
+      &__h2{
+         @include H2;
+      }
+
+      &__p{
+         @include P1;
+         margin-bottom: 40px;
+      }
+
+      &__numbers{ 
+         display: grid;
+         grid-template-columns: max-content max-content;
+         grid-column-gap: 150px;
+         grid-row-gap: 30px;
+
+         margin-bottom: 40px;
+
+         .number{
+            margin: 0;
+            display: block;
+            text-align: center;
+
+            @include F1500;
+            font-size: 2.875rem;
+            line-height: 100%;
+            color: $primary;
+
+            span{
+               display: block;
+               @include F1400;
+               font-size: 1.5rem;
+               line-height: 162%;
+               color: #979797;
+            }
+         }
+      }
+
+      &__btn{
+         @include Btn1;
+      }
+   }
+
+   .forAllNeedsImg{
+      img{
+         display: block;
+         width: 100%;
+         max-width: 500px;
+         margin-left: auto;
+      }
+   }
+
+}
+
+
+.tasWrap{
+   background-color: $wh;
+
+   .tasImage{
+      img{
+         display: block;
+         width: 100%;
+      }
+   }
+
+   .tasText{
+      h1{
+         @include H2;
+         max-width: 500px;
+      }
+
+      p{
+         @include P2;
+         margin-bottom: 20px;
+      }
+
+      a{
+         @include Btn1;
+         margin-top: 60px;
+      }
+   }
+}
+
+
+.meetingRoomsWrap{
+
+   .meetingRoomsImage{
+      img{
+         display: block;
+         object-fit: cover;
+         width: 100%;
+         min-width: 100%;
+         max-width: 100%;
+      }
+   }
+
+   .meetingRoomsText{
+      h1{
+         @include H2;
+         max-width: 500px;
+      }
+
+      p{
+         @include P2;
+         margin-bottom: 20px;
+      }
+
+      a{
+         @include Btn1;
+         margin-top: 60px;
+      }
+   }
+}
+
+
+.homeContactUsWrap{
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+
+   background-image:linear-gradient(0deg, rgba(24, 46, 66, 0.5), rgba(24, 46, 66, 0.8)),
+                     url('../img/people-2.png');
+
+   .contactUs{
+      h2{
+         max-width: 800px;
+         margin: auto;
+         @include F1500;
+         font-size: 2.25rem;
+         line-height: 150%;
+         color: $wh;
+         text-align: center;
+      }
+
+      p{
+         @include P1;
+         color: $wh;
+         text-align: center;
+         margin: 50px 0;
+      }
+
+      a{
+         @include Btn1;
+         margin: auto;
+      }
+
+      &__btns{
+         width: fit-content;
+         margin: auto;
+
+         a{
+            margin: 0 10px;
+         }
+      }
+   }
+}
+
+
+.partnersLogosWrap{
+   background-color: $wh;
+
+   .logos{
+      img{
+         display: block;
+         height: 40px;
+         margin: 10px;
+      }
+   }
+}
+
+@media screen and (max-width: 1020px){
+   .partnersLogosWrap{
+      .logos{
+         img{
+            height: 30px;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 800px){
+   .partnersLogosWrap{
+      .logos{
+         img{
+            height: 25px;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 500px){
+   .forAllNeedsWrap{
+
+      .forAllNeedsText{
+         &__numbers{ 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+   
+            .number{
+               font-size: 1.5rem;
+   
+               span{
+                  font-size: 1.125rem;
+               }
+            }
+         }
+      }
+
+   }
+}

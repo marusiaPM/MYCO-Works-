@@ -1,0 +1,44 @@
+.saleBannerWrap{
+   background-size: cover;
+   background-repeat: no-repeat; 
+   background-position: center center;
+
+   background-image:linear-gradient(0deg, rgba(34, 59, 83, 0.95), rgba(34, 59, 83, 0.95)),
+                     url('../img/flash-sale-banner.png');
+
+   .saleBanner{
+      .heading{
+         @include F1500;
+         font-size: 2.125rem;
+         line-height: 160%;
+         color: $wh;
+         text-align: center;
+
+         span{
+            color: $accent;
+         }
+      }
+
+      .text{
+         width: 100%;
+         max-width: 600px;
+         margin: auto;
+         @include P1;
+         color: $wh;
+         text-align: center;
+      }
+
+      .text2{
+         @include F2700;
+         font-size: 1.375rem;
+         line-height: 160%;
+         color: $wh;
+         text-align: center;
+      }
+
+      .btn{
+         @include Btn1;
+         margin: auto;
+      }
+   }
+}

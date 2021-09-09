@@ -1,0 +1,421 @@
+.topNavWrap{
+   border-bottom: 1px solid $gr-1;
+   transition: all 0.05s ease;
+
+   position: fixed;
+   top: 0;
+   z-index: 1900;
+   width: 100%;
+
+   // inner wrapper 
+   .topNav{
+      display: grid;
+      grid-template-columns: max-content 1fr max-content;
+      grid-column-gap: 20px;
+   }
+
+   // nav logo 
+   .topNavLeft{
+      .topNavLogo{
+         display: block;
+         text-decoration: none;
+         width: 230px;
+         padding: 0;
+         margin: 0;
+
+         img{
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+         }
+      }
+   }
+
+   // nav links
+   .topNavLinks{
+      // inner wrapper 
+      .topNavLinksInner{ 
+         display: flex;
+         justify-content: flex-end;
+         align-items: center; 
+      }
+      
+      // close nav btn (on mobile) 
+      .close-nav{
+         display: none;
+      }
+
+      .navLink{
+         padding: 35px 0;
+         margin: 0;
+         margin-left: 20px;
+         white-space: nowrap;
+         @include F1500;
+         font-size: 1rem;
+         line-height: 100%;
+         color: $wh;
+         text-decoration: none;
+         transition: all 0.2s ease-in-out;
+
+         &:hover{
+            color: $accent;
+         }
+         
+      }
+   }
+
+   // nav buttons 
+   .topNavBtns{
+      // log in 
+      .navLogIn{
+         white-space: nowrap;
+         @include Btn1;
+         box-shadow: none;
+         margin-right: 20px;
+      }
+
+      // nav phone 
+      .navPhone{
+         cursor: pointer;
+         text-decoration: none;
+
+         display: grid;
+         grid-template-columns: max-content max-content;
+         grid-template-rows: max-content max-content;
+         grid-column-gap: 10px;
+         grid-row-gap: 10px;
+
+         &__icon{
+            grid-row: 1 / span 2;
+            grid-column: 1 / span 1;
+            align-self: center;
+
+            width: 41px;
+            margin: 0;
+            padding: 0;
+         }
+
+         &__call{
+            transition: all 0.1s ease-in-out;
+
+            grid-row: 1 / span 1;
+            grid-column: 2 / span 1;
+
+            margin: 0;
+            padding: 0;
+            @include F1400;
+            color: $wh;
+            font-size: 0.875rem;
+            line-height: 100%;
+         }
+
+         &__number{
+            transition: all 0.1s ease-in-out;
+
+            grid-row: 2 / span 1;
+            grid-column: 2 / span 1;
+
+            margin: 0;
+            padding: 0;
+            @include F1500;
+            color: $accent;
+            font-size: 1.125rem;
+            line-height: 100%;
+         }
+      }
+   }
+
+   //top nav burger 
+   .topNavBurger{
+      display: none;
+   }
+}
+
+
+// top nav - on scroll 
+.topNavWrap--sticky{
+   background-color: rgba(24, 46, 66, 0.97);
+   
+   // nav left part 
+   .topNavLeft{
+      .topNavLogo{
+         transition: all 0.1s ease-in-out;
+         width: 200px;
+      }
+   }
+
+   // nav links
+   .topNavLinks{
+      .navLink{ 
+         padding: 25px 0;
+      }
+   }
+
+   .topNavBtns{
+      .navLogIn{
+         padding: 10px 30px;
+      }
+   }
+}
+
+// nav into 2 rows 
+@media screen and (max-width: 1020px) {
+   .topNavWrap{
+      .topNav{
+         grid-template-columns: max-content 1fr;
+         justify-items: end;
+      }
+
+      .topNavLinks{
+         .navLink{ 
+            padding: 30px 0;
+         }
+      }
+
+      .topNavBtns{ 
+         padding: 15px 0;
+         position: relative;
+         grid-column: 1 / span 2;
+         grid-row: 1 / span 1;
+         width: 100%;
+
+         .navLogIn{    
+            padding: 10px 25px;
+         }
+
+         .navPhone{
+            margin-left: auto;
+            grid-template-rows: max-content !important;
+
+            &__call{
+               display: none;
+            }
+
+            &__number{
+               grid-row: 1 / span 1;
+               align-self: center;
+            }
+
+            &__icon{
+               grid-row: 1 / span 1;
+               width: 35px;
+            }
+         }
+
+         &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: -50%;
+            width: 200vw;
+            border-bottom: 1px solid $gr-1;
+         }
+      }
+   }
+
+   .topNavWrap--sticky{
+      .topNavBtns{
+         display: none !important;
+      }
+   }
+}
+
+// links and burger 
+@media screen and (max-width: 700px){
+   .topNavWrap{
+
+      // nav logo 
+      .topNavLeft{
+         padding: 20px 0;
+      }
+
+      // nav links
+      .topNavLinks{
+         z-index: 2000;
+         position: fixed;
+         top: 0;
+         left: 0;
+
+         width: 100vw;
+         height: 100vh;
+         overflow-y: auto !important ;
+         overflow-x: hidden !important ;
+
+         background-color: $blk;
+         padding: 50px 20px 20px 20px;
+
+         transform: translateX(100%);
+
+         &--open{
+            transform: translateX(0%);
+         }
+
+         @include Flex2;
+
+         .topNavLinksInner{
+            display: block;
+            width: fit-content;
+         }
+
+         .close-nav{
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+
+            cursor: pointer;
+
+            color: $wh;
+            font-size: 2rem;
+
+            @include leftAndBack;
+
+            transition: opacity 0.5s ease ;
+         }
+
+         .navLink{
+            display: block;
+            width: 100%;
+            margin:  0 0 40px 0 !important;
+            padding: 0 0;
+
+            @include F1700;
+            font-size: 1.5rem;
+            text-align: center;
+
+            transform: translateX(300px);
+            opacity: 0;
+
+            transition: all 0.4s ease ;
+
+            &--show{
+               transform: translateX(0px);
+               opacity: 100;
+            }
+         }
+      }
+
+      // top nav drop down
+      .topNavDropDown{
+         position: relative;
+         display: block;
+         width: 100%;
+
+         .navLink{ 
+            i{
+               font-size: 1rem;
+            }
+         }
+
+         .topNavDropMenu{
+            position: relative !important;
+            top: 0;
+            left: 0;
+            transform: translateX(0%);
+
+            border: none;
+            background-color: transparent;
+            padding: 0 0;
+
+            .dropDownCol{
+               display: block;
+               width: 100%;
+               max-height: fit-content !important;
+               
+               &__h{
+                  display: none;
+               }
+
+               &__link{ 
+                  color: $wh;
+                  text-align: center;
+               }
+
+               &:not(:last-child){
+                  padding-right: 0px;
+                  margin-right: 0px;
+                  border-right: none;
+               }
+            }
+         }
+
+         &:hover{
+            .topNavDropMenu{
+               display: block !important;
+            }
+         }
+      }
+   
+      .topNavBurger{ 
+         margin-top: 20px;
+         
+         width: 31px;
+         height: 25px; 
+      
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items: flex-end;
+      
+         .burgerLine{
+            display: block;
+            border-top: 4px solid $wh;
+            transition: all 0.2s ease-in-out;
+
+            &--1{
+               width: 31px;
+            }
+            &--2{
+               width: 21px;
+            }
+            &--3{
+               width: 11px;
+            }
+         }
+      
+         &:hover{
+            cursor: pointer;
+      
+            .burgerLine{
+               border-color: $accent;
+               &--1{
+                  width: 31px;
+               }
+               &--2{
+                  width: 31px;
+               }
+               &--3{
+                  width: 31px;
+               }
+            }
+         }
+         
+      }
+   }
+   
+}
+
+
+@media screen and (max-width: 500px){
+   .topNavWrap{
+
+      .topNavLeft{
+         .topNavLogo{
+            width: 180px;
+         }
+      }
+
+      .topNavBtns{
+         .navPhone{
+            display: block;
+            &__number{
+               display: none;
+            }
+         }
+      }
+
+   }
+   
+}

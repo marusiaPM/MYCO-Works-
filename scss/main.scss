@@ -1,0 +1,39 @@
+
+@import 'abstract/notes'; //notes regarding the project
+@import 'abstract/reset'; //resets of default settings
+@import 'abstract/colors'; //color variables
+@import 'abstract/fontsAndText'; //font variables and text mix-ins
+@import'abstract/flex'; // display flex mix-ins
+@import'abstract/animations'; // animations
+@import 'abstract/container'; // containers - like container 90 for example
+
+
+/*---ELEMENTS---*/ 
+// elements like buttons, links , lists etc, small elements that repeat all over the design 
+@import 'elements/lists';
+@import 'elements/buttons';
+@import 'elements/tooltips';
+@import 'elements/modals';
+@import 'elements/map-modals';
+
+
+/*---LAYOUT FILES---*/
+// styles for sections that repeat on more than one pages - for example header, footer and navigation 
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/footer';
+@import 'layout/address-services';
+@import 'layout/our-locations';
+@import 'layout/testimonials';
+@import 'layout/faqs';
+@import 'layout/banners';
+
+
+/*---PAGES--*/
+// styles for the individual pages 
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/locations';
+@import 'pages/contact';
+@import 'pages/thank-you';
+@import 'pages/terms-pages';

@@ -1,0 +1,22 @@
+ // ALL MODAL CONTAINERS 
+.modalContainer{
+   z-index: 1950;
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   min-width: 100%;
+   min-height: 100%;
+   max-height: fit-content;
+   overflow: hidden;
+
+   @include Flex2;
+   display: none;
+
+   background-color: rgba(44, 59, 88, 0.1);
+
+   transition: all 1s ease-in-out;
+}
+
+

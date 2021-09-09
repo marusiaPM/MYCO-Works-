@@ -1,0 +1,235 @@
+.headerWrap{   
+   position: relative;
+   min-height: 400px;
+   background-size: cover;
+   background-repeat: no-repeat; 
+   background-position: center center;
+
+   padding: 120px 0 50px 0;
+   display: grid;
+   align-items: center;  
+
+   // home page header text 
+   .homeHeaderText{
+
+      &__logo{ 
+         display: block;
+         width: 400px;
+         max-width: 80%;
+         
+         margin: auto;
+         margin-bottom: 35px;
+      }
+
+      &__text{
+         @include F1400;
+         font-size: 1.875rem;
+         color: $wh;
+         text-align: center;
+         width: 100%;
+         margin-bottom: 0;
+      }
+   }
+
+   // scroll and social liks for home page 
+   .homeHeadeSocials{
+      position: absolute;
+      top: 0;
+      left: 10%;
+      
+      height: 100%;
+      padding: 0 20px 40px 0;
+      border-right: 1px solid #848484;
+
+      a{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 35px;
+         height: 35px;
+         border: 1px solid $wh;
+         border-radius: 50%;
+         text-decoration: none;
+         margin-bottom: 20px;
+         transition: all 0.2s ease-in-out;
+
+         i{
+            font-size: 1rem;
+            color: $wh;
+         }
+
+         &:hover{
+            background-color: $accent;
+            border-color: $accent;
+         }
+      }
+
+      .scroll{
+         cursor: pointer;
+         @include downAndUp;
+
+         img{
+            margin-top: 20px;
+            display: block;
+            width: 30px;
+         }
+      }
+   }
+
+   // header text for secondary pages
+   .headerText{
+
+      // header text for all secondary pages 
+      &__text{
+         h1{
+            max-width: 750px;
+            @include F1500;
+            font-size: 2.75;
+            line-height: 125%;
+            color: $wh;
+            padding: 0;
+            margin: 0;
+
+            &::after{
+               content: ".";
+               color: $accent;
+            }
+         }
+
+         p{
+            max-width: 600px;
+            margin-top: 20px;
+            @include F1400;
+            font-size: 1.125rem;
+            line-height: 1.875rem;
+            color: $wh;
+         }
+      }
+
+      // header text wrap for home page 
+      &--home{
+         padding: 0 55px;
+      }
+   }
+
+   // scroll for all secondary pages 
+   .headerScrollWrap{
+      position: absolute;
+      left: 50%;
+      bottom: 80px;
+      transform: translateX(-50%);  
+
+      .headerScroll{
+         display: block;
+         width: 40px;
+         @include upAndDown;
+         cursor: pointer;
+      }
+   }
+
+   &--home{
+      padding: 120px 0;
+      min-height: 800px;
+      background-image: linear-gradient(0deg, rgba(24, 46, 66, 0.8), rgba(30, 60, 88, 0.6)), 
+                     url('../img/headers/header-1.png');
+   }
+
+   &--about{
+      background-image:linear-gradient(89.92deg, rgba(24, 46, 66, 0.75) 26.59%, rgba(34, 34, 50, 0.225) 64.87%), linear-gradient(0deg, rgba(24, 46, 66, 0.7), rgba(24, 46, 66, 0.7)),
+                     url('../img/headers/about-header.jpg');
+   }
+
+   &--contact{
+      background-image:linear-gradient(89.92deg, rgba(24, 46, 66, 0.75) 26.59%, rgba(34, 34, 50, 0.225) 64.87%), linear-gradient(0deg, rgba(24, 46, 66, 0.7), rgba(24, 46, 66, 0.7)),
+                     url('../img/headers/contact-header.png');
+   }
+
+} 
+
+// home page header social links MQ 
+@media screen and (max-width: 1825px){
+   .headerWrap{
+      .homeHeadeSocials{
+         left: 5%;
+      }
+   }
+}
+
+// home page header social links MQ 
+@media screen and (max-width: 1625px){
+   .headerWrap{
+      .homeHeadeSocials{
+         left: 2%;
+      }
+   }
+}
+
+// home page header social links MQ 
+@media screen and (max-width: 1525px){
+   .headerWrap{
+      .homeHeadeSocials{
+         left: 10px;
+      }
+   }
+}
+
+// home page header social links MQ 
+@media screen and (max-width: 1455px){
+   .headerWrap{
+      .homeHeadeSocials{
+         padding: 0px 0px 30px 0;
+         border-right: none;
+         left: 20px;
+      }
+   }
+}
+
+// home page header social links MQ 
+@media screen and (max-width: 1366px){ 
+   .headerWrap{
+      // home page header text 
+      .homeHeaderText{
+         padding:0px 45px !important;
+      }
+
+      .homeHeadeSocials{
+         left: 2%
+      }
+   }
+}
+
+// home page header social links MQ 
+@media screen and (max-width: 570px){
+
+   .headerWrap{
+      min-height: fit-content;
+      padding: 250px 0 150px 0;
+
+      // home page header text 
+      .homeHeaderText{
+         padding:0px 0px !important;
+      }
+
+      // header text for secondary pages
+      .headerText{
+         &__text{
+            h1{
+               font-size: 2rem;
+               line-height: 130%;
+            }
+
+            p{
+               font-size: 1rem;
+               line-height: 160%;
+            }
+         }
+      }
+
+      // scroll for all secondary pages 
+      .headerScrollWrap{
+         bottom: 50px;
+         padding-left: 10px;
+      }
+   }
+}
+

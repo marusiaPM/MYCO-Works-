@@ -1,0 +1,60 @@
+.locationMapModal{
+
+   z-index: 20002;
+   width: 90%;
+   max-width: 800px;
+   height: fit-content;
+   max-height: 95%;
+   overflow-x: hidden;
+   overflow-y: auto;
+   transform:translateY(-150%);
+   transition: all 1.2s ease-in-out;
+
+   background-color: $wh;
+   padding: 30px;
+   border-radius: 6px;
+   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.4);
+
+   &::-webkit-scrollbar { width: 0 !important }
+   overflow: -moz-scrollbars-none;
+   -ms-overflow-style: none;
+
+   &__head{
+      width: 100%;
+      display: flex; 
+      justify-content: space-between;
+      align-items: flex-start;
+
+      h1{
+         @include F1500;
+         color: $blk;
+         font-size: 1.25rem;
+         margin-bottom: 30px;
+         line-height: 100%;
+      }
+
+      i{
+         color: $accent;
+         font-size: 1.25rem;
+         transition: all 0.5s ease;
+         margin-left: 50px;
+
+         &:hover{
+            cursor: pointer;
+         }
+      }
+   }
+
+   &__map{
+      position: initial;
+      text-align: right;
+      max-height: 40rem;
+      overflow-y: hidden !important;
+
+      .gmap_canvas {
+         background:none!important;
+         max-height: 400px;
+         width:100%;
+      }
+   }
+}
