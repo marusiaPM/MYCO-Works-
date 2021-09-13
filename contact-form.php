@@ -11,7 +11,7 @@ if($_POST) {
    $reason = "";
 	$message = "";
 	$email_body = "<div>";
-	$recipient = "contact@thelondonoffice.com";
+	$recipient = "marusia.petrova.m@gmail.com";
 
    // name 
 	if(isset($_POST['contact_name'])) {
